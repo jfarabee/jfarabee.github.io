@@ -2,6 +2,7 @@ body {
     height:100%;
     font-size:larger;
     background-repeat:no-repeat;
+    background-attachment:fixed;
     background-color:#CCFFFF;
     background: linear-gradient(0deg, rgba(204,255,255,1) 15%, rgba(255,204,255,1) 100%)    fixed;
     color:black;
