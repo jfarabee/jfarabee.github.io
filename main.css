@@ -16,6 +16,10 @@ body {
     color:black;    
 }
 
+p {
+    font-family:'Cascadia';
+}
+
 code{
     font-family:'Cascadia';
 }
