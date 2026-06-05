@@ -1,35 +1,119 @@
 @font-face {
     font-family: 'Cascadia';
-    src: url('../fonts/CascadiaCodePL.ttf') format('truetype'),
-    	 url('../fonts/CascadiaCodePL.woff2') format('woff2');
+    src: url('./fonts/CascadiaCodePL.ttf') format('truetype'),
+         url('./fonts/CascadiaCodePL.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family:'Cascadia';
-    height:100%;
-    font-size:larger;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-    background-color:#CCFFFF;
-    background: linear-gradient(0deg, rgba(204,255,255,1) 15%, rgba(255,204,255,1) 100%)    fixed;
-    color:black;    
+    font-family: 'Cascadia', monospace;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #e8c99a;
+    background-image: repeating-conic-gradient(#5a3010 0% 25%, #e8c99a 0% 50%);
+    background-size: 288px 288px;
 }
 
-p {
-    font-family:'Cascadia';
+.chess-piece {
+    position: fixed;
+    width: 144px;
+    height: 144px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
 }
 
-code{
-    font-family:'Cascadia';
+.chess-piece img {
+    width: 120px;
+    height: 120px;
 }
 
-a   {
-    font-family:'Cascadia';
-    color:dimgray;
-    text-decoration:none;
-    outline:0;
+.chess-piece.white img {
+    filter: drop-shadow(0 2px 5px rgba(10, 3, 0, 0.6));
 }
+
+.chess-piece.black img {
+    filter: drop-shadow(0 2px 5px rgba(255, 235, 190, 0.45));
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 252, 245, 0.93);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(90, 48, 16, 0.18);
+    border-radius: 6px;
+    padding: 3rem 3.5rem;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 12px 48px rgba(30, 10, 0, 0.45);
+}
+
+header {
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(90, 48, 16, 0.15);
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #2c1005;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.4rem;
+}
+
+.role {
+    font-size: 0.85rem;
+    color: #7a4a1a;
+}
+
+.bio {
+    margin-bottom: 2rem;
+}
+
+.bio p {
+    font-size: 0.875rem;
+    color: #3a2010;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.bio p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    font-family: 'Cascadia', monospace;
+    color: #5a3010;
+    text-decoration: none;
+}
+
 a:hover {
-    text-decoration:underline;
+    text-decoration: underline;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(90, 48, 16, 0.15);
+}
+
+nav a {
+    font-size: 0.875rem;
 }
